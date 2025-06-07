@@ -1,13 +1,13 @@
-name: Literals
+name: Operators
 on: push
 jobs:
     print:
         runs-on: ubuntu-latest
         steps:
-            - run: printenv | grep 'LITERAL_'
+            - run: printenv | grep 'COMP_'
               env:
-                LITERAL_NULL: ${{ null }}
-                LITERAL_BOOLEAN: ${{ true }}
-                LITERAL_NUMBER: ${{ 1234 }}
-                LITERAL_STRING: ${{ 'Hello' }}
-                LITERAL_OMIT_STRING: World
+                OPERATION_COMP_1: ${{ 1 < 5 }}
+                OPERATION_COMP_2: ${{ 'hello' == 'Hello' }}
+                OPERATION_COMP_3: ${{ 'hello' != 'Hello' }}
+                OPERATION_COMP_4: ${{ true || false }}
+                OPERATION_COMP_5: ${{ false && true }}
