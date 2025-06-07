@@ -6,4 +6,5 @@ jobs:
         name: RunNameJob
         runs-on: ubuntu-latest
         steps:
-            - run: echo "This is run name test"
+            - name: run-name-step
+              run: echo "This is run name test"
