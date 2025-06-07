@@ -2,14 +2,13 @@ name: Manual
 on:
     workflow_dispatch:
         inputs:
-            log-level:
-                type: choice
-                options:
-                    - info
-                    - warn
-                    - error
+            greeting:
+                type: string
+                default: Hello
+                required: true
+                description: A cheerful word
 jobs:
     run:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "Log level ${{ inputs.log-level }}"
+            - run: echo "${{ inputs.greeting }}"
