@@ -1,4 +1,4 @@
-name: GitHub API Comment Test
+name: GitHub API PR Comment Test
 on: pull_request
 jobs:
     comment:
