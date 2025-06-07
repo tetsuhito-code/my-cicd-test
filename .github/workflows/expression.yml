@@ -4,6 +4,4 @@ jobs:
     print:
         runs-on: ubuntu-latest
         steps:
-            - run: printenv | grep 'OBJECT'
-              env:
-                OBJECT_FILTER_1: ${{ github.event.*.html_url }}
+            - run: echo "${{ github.event.*.html_url }}"
