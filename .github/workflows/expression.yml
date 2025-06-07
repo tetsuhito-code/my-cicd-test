@@ -1,8 +1,10 @@
-name: Conditions
+name: Hash
 on: push
 jobs:
-    skip-or-run:
+    hash:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "Hello"
-              if: ${{ contains(github.run_id, '1') }}
+            - uses: actions/checkout@v4
+            - run: echo "${HASH}"
+              env:
+                HASH: ${{ hashFiles('.github/workflows/*.yml') }}
