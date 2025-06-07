@@ -1,9 +1,8 @@
-name: Status check functions
+name: Conditions functions
 on: push
 jobs:
-    fail:
+    skip-or-run:
+        if: ${{ github.actor == 'octcat'}}
         runs-on: ubuntu-latest
         steps:
-            - run: exit 1
-            - run: echo "Hello status check functions world"
-              if: ${{ failure() }}
+            - run: exit "Hello"
