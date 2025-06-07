@@ -1,7 +1,11 @@
-name: Object Filter
+name: Compare functions
 on: push
 jobs:
-    print:
+    compare:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{ github.event.*.html_url }}"
+            - run: printenv | grep '_FUNC'
+              env:
+                CONTAINS_FUNC: ${{ contains('Hello', 'ell')}}
+                STARTSWITH_FUNC: ${{ startsWith('Hello', 'He') }}
+                ENDSWITH_FUNC: ${{ endsWith('Hello', 'lo') }}
