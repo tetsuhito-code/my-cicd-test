@@ -4,4 +4,5 @@ jobs:
     print:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{ github.event.pull_request.title }}"
+            - run: echo "${{ runner.arch }}"
+            - run: echo "${{ runner.name }}"
