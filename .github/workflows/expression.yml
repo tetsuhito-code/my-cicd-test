@@ -5,4 +5,4 @@ jobs:
         if: ${{ github.actor == 'octcat'}}
         runs-on: ubuntu-latest
         steps:
-            - run: exit "Hello"
+            - run: echo "Hello"
