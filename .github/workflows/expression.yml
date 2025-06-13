@@ -1,8 +1,0 @@
-name: Conditions functions
-on: push
-jobs:
-    skip-or-run:
-        if: ${{ github.actor == 'octcat'}}
-        runs-on: ubuntu-latest
-        steps:
-            - run: exit "Hello"
