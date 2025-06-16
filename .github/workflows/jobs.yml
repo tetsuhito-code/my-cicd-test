@@ -1,0 +1,11 @@
+name: Parallel jobs
+on: push
+jobs:
+    first:
+        runs-on: ubunut-latest
+        steps:
+            - run: sleep 10 && echo "First job"
+    second:
+        runs-on: ubuntu-latest
+        steps:
+            - run: sleep 20 && echo "Second job"
